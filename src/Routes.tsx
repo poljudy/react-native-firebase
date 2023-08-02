@@ -1,47 +1,42 @@
-import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
 
 //Pages
-import { Login }  from './pages/Login'
-import { Signup } from './pages/Signup'
-import { Chat } from './pages/Chat'
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
+import { Chat } from "./pages/Chat";
 
-
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
 
 export function RootStack() {
   return (
     <Stack.Navigator
       initialRouteName="Signup"
       screenOptions={{
-        headerTitleAlign: 'center',
+        headerTitleAlign: "center",
         headerStyle: {
-          backgroundColor: '#3740FE',
+          backgroundColor: "#3740FE",
         },
-        headerTintColor: '#fff',
+        headerTintColor: "#fff",
         headerTitleStyle: {
-          fontWeight: 'bold',
+          fontWeight: "bold",
         },
       }}
     >
-      <Stack.Screen 
-        name="Signup" 
-        component={Signup} 
-        options={{ title: 'Cadastro' }}
-      />       
-      <Stack.Screen 
-        name="Login" 
-        component={Login} 
-        options={
-          {title: 'Acesso'}
-        }
+      <Stack.Screen
+        name="Signup"
+        component={Signup}
+        options={{ title: "Cadastro" }}
       />
-      <Stack.Screen 
-       name="Chat" 
-       component={Chat} 
-       options={
-         { title: 'Chat', headerLeft: null } 
-       }
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ title: "Acesso" }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={{ title: "Chat", headerLeft: null }}
       />
     </Stack.Navigator>
   );
